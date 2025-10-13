@@ -67,3 +67,14 @@ window.addEventListener("DOMContentLoaded", () => {
   // Auto slide setiap 5 detik
   setInterval(() => showSlide(index + 1), 5000);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    menuToggle.textContent = navMenu.classList.contains("show") ? "✕" : "☰";
+  });
+});
+
