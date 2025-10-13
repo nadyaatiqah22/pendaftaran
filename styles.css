@@ -318,3 +318,108 @@ h2::after {
     transform: scale(1);
   }
 }
+
+/* ========================= */
+/* RESPONSIVE DESIGN SECTION */
+/* ========================= */
+
+/* Umum: sesuaikan padding dan ukuran teks di layar kecil */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* HEADER RESPONSIVE */
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* disembunyikan dulu */
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+    border-radius: 0 0 10px 10px;
+    padding: 0.5rem 0;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav li {
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav a {
+    color: white;
+    display: block;
+    width: 100%;
+  }
+
+  /* Tombol menu (hamburger) */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    margin-left: auto;
+  }
+}
+
+/* Untuk layar sangat kecil (HP lama < 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .slider button {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .countdown-box {
+    gap: 0.8rem;
+  }
+
+  .countdown-box div {
+    min-width: 60px;
+    padding: 0.6rem;
+  }
+
+  .countdown-box span {
+    font-size: 1.3rem;
+  }
+}
