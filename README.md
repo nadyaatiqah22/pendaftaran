@@ -9,19 +9,23 @@
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">EventName 2025</a>
-      <nav>
-        <ul class="nav">
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#schedule">Jadwal</a></li>
-          <li><a href="#sponsor">Sponsor</a></li>
-          <li><a href="#register" class="cta">Daftar</a></li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="container header-inner">
+    <a href="#" class="logo">EventName 2025</a>
+
+    <!-- Tombol Hamburger -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- Navigasi -->
+    <ul class="nav" id="nav-menu">
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#schedule">Jadwal</a></li>
+      <li><a href="#speakers">Pembicara</a></li>
+      <li><a href="#sponsor">Sponsor</a></li>
+      <li><a href="#register" class="cta">Daftar</a></li>
+    </ul>
+  </div>
+</header>
+
 
   <!-- HERO -->
 <section class="hero" id="home">
