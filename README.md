@@ -19,7 +19,6 @@
     <ul class="nav" id="nav-menu">
       <li><a href="#about">Tentang</a></li>
       <li><a href="#schedule">Jadwal</a></li>
-      <li><a href="#speakers">Pembicara</a></li>
       <li><a href="#sponsor">Sponsor</a></li>
       <li><a href="#register" class="cta">Daftar</a></li>
     </ul>
