@@ -1,13 +1,12 @@
 :root {
-  --accent: #1a7f1a;       /* Hijau utama */
-  --accent-light: #a7e639; /* Kuning-hijau terang */
-  --bg: #f9fff7;           /* Latar belakang lembut */
-  --text: #1e1e1e;         /* Warna teks utama */
+  --accent: #1a7f1a;
+  --accent-light: #a7e639;
+  --bg: #f9fff7;
+  --text: #1e1e1e;
   --radius: 10px;
   font-family: 'Inter', sans-serif;
 }
 
-/* BODY */
 body {
   margin: 0;
   color: var(--text);
@@ -15,14 +14,14 @@ body {
   line-height: 1.6;
 }
 
-/* CONTAINER */
+/* === CONTAINER === */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* HEADER */
+/* === HEADER === */
 .site-header {
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
   color: white;
@@ -36,6 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -51,6 +51,7 @@ body {
   gap: 1rem;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .nav a {
@@ -72,20 +73,29 @@ body {
   font-weight: 600;
 }
 
-/* HERO */
+/* === HERO === */
 .hero {
   text-align: center;
   background: linear-gradient(180deg, #e8ffd9 0%, #fffbe0 100%);
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
 }
 
-.hero h1 {
-  color: var(--text);
+.hero .container > * {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: heroZoomIn 1.2s ease-out forwards;
 }
 
-.hero h1 span {
-  color: var(--accent);
+.hero h1 { animation-delay: 0.1s; }
+.hero p { animation-delay: 0.4s; }
+.hero .btn-primary { animation-delay: 0.7s; }
+
+@keyframes heroZoomIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
 }
+
+.hero h1 span { color: var(--accent); }
 
 .btn-primary,
 .btn-secondary {
@@ -115,7 +125,7 @@ body {
   background: #d6ff7f;
 }
 
-/* SECTIONS */
+/* === SECTION === */
 .section {
   padding: 2rem 1rem;
 }
@@ -141,7 +151,7 @@ h2::after {
   border-radius: 5px;
 }
 
-/* TIMELINE */
+/* === TIMELINE === */
 .timeline {
   list-style: none;
   padding: 0;
@@ -154,7 +164,7 @@ h2::after {
   margin-bottom: 0.5rem;
 }
 
-/* SPONSOR */
+/* === SPONSORS === */
 .sponsors {
   display: flex;
   justify-content: center;
@@ -172,7 +182,7 @@ h2::after {
   transform: scale(1.1);
 }
 
-/* REGISTER BUTTONS */
+/* === REGISTER BUTTONS === */
 .register-buttons {
   display: grid;
   gap: 1rem;
@@ -180,7 +190,7 @@ h2::after {
   margin: 1.5rem auto;
 }
 
-/* CONTACTS */
+/* === CONTACTS === */
 .contacts {
   display: flex;
   flex-wrap: wrap;
@@ -202,20 +212,12 @@ h2::after {
   transform: translateY(-4px);
 }
 
-/* FOOTER */
-.site-footer {
-  background: var(--accent);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* COUNTDOWN TIMER */
+/* === COUNTDOWN === */
 .countdown-box {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
   margin: 1.5rem 0;
 }
 
@@ -252,7 +254,16 @@ h2::after {
   color: #c22;
 }
 
-/* GALLERY SLIDER */
+/* === FOOTER === */
+.site-footer {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === SLIDER === */
 .slider {
   position: relative;
   overflow: hidden;
@@ -295,106 +306,63 @@ h2::after {
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* === HERO ANIMATION === */
-.hero .container > * {
-  opacity: 0;
-  transform: scale(0.9);
-  animation: heroZoomIn 1.2s ease-out forwards;
+/* === SMALL TEXT (for countdown notice) === */
+.small {
+  text-align: center;
+  font-size: 0.95rem;
 }
 
-/* Tunda kemunculan per elemen */
-.hero h1 { animation-delay: 0.1s; }
-.hero p { animation-delay: 0.4s; }
-.hero .btn-primary { animation-delay: 0.7s; }
-
-/* Keyframes zoom-in */
-@keyframes heroZoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ========================= */
-/* RESPONSIVE DESIGN SECTION */
-/* ========================= */
-
-/* Umum: sesuaikan padding dan ukuran teks di layar kecil */
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
-  .container {
-    padding: 0.8rem;
-  }
-
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  /* HEADER RESPONSIVE */
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.5rem 1rem;
   }
 
   .nav {
-    flex-direction: column;
-    width: 100%;
-    display: none; /* disembunyikan dulu */
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
-    border-radius: 0 0 10px 10px;
-    padding: 0.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
-  .nav.active {
-    display: flex;
+  .hero {
+    padding: 3rem 1rem;
   }
 
-  .nav li {
-    text-align: center;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
-  .nav a {
-    color: white;
-    display: block;
-    width: 100%;
-  }
-
-  /* Tombol menu (hamburger) */
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
+  .hero h1 {
     font-size: 1.6rem;
-    margin-left: auto;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .countdown-box div {
+    min-width: 70px;
+    padding: 0.75rem;
+  }
+
+  .contact-card {
+    max-width: 100%;
+  }
+
+  .slider button {
+    padding: 0.4rem 0.8rem;
   }
 }
 
-/* Untuk layar sangat kecil (HP lama < 480px) */
 @media (max-width: 480px) {
-  .hero {
-    padding: 2rem 1rem;
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
   }
 
   .hero h1 {
@@ -402,24 +370,71 @@ h2::after {
   }
 
   .hero p {
-    font-size: 0.9rem;
-  }
-
-  .slider button {
-    font-size: 1.2rem;
-    padding: 0.4rem 0.7rem;
-  }
-
-  .countdown-box {
-    gap: 0.8rem;
-  }
-
-  .countdown-box div {
-    min-width: 60px;
-    padding: 0.6rem;
+    font-size: 0.95rem;
   }
 
   .countdown-box span {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
+
+/* === NAVBAR TOGGLE === */
+.menu-toggle {
+  display: none;
+  background: white;
+  color: var(--accent);
+  border: none;
+  font-size: 1.6rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: var(--accent-light);
+  color: #333;
+}
+
+/* === MOBILE NAV === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid var(--accent-light);
+  }
+
+  .nav li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav a {
+    color: var(--accent);
+    font-weight: 600;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .nav.show {
+    display: flex;
+    animation: fadeDown 0.4s ease forwards;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
