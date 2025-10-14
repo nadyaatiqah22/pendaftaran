@@ -78,3 +78,40 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Navbar Toggle
+const toggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// Hero Animation on Load
+window.addEventListener("load", () => {
+  document.getElementById("hero-content").classList.add("show");
+});
+
+// Countdown
+const countdownDate = new Date("Oct 30, 2025 23:00:00 GMT+0700").getTime();
+
+const timer = setInterval(() => {
+  const now = new Date().getTime();
+  const diff = countdownDate - now;
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = d.toString().padStart(2, "0");
+  document.getElementById("hours").textContent = h.toString().padStart(2, "0");
+  document.getElementById("minutes").textContent = m.toString().padStart(2, "0");
+  document.getElementById("seconds").textContent = s.toString().padStart(2, "0");
+
+  if (diff < 0) {
+    clearInterval(timer);
+    document.getElementById("countdown").style.display = "none";
+    document.getElementById("countdown-message").textContent = "⛔ Pendaftaran Telah Ditutup.";
+  }
+}, 1000);
+
