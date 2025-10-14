@@ -10,13 +10,13 @@
 <body class="bg-gray-50 text-gray-800">
     
   <!-- HEADER -->
-  <header class="bg-gradient-to-r from-green-900 via-green-500 to-lime-700 text-white p-6 flex justify-between items-center shadow-md">
+  <header class="bg-gradient-to-r from-green-800 to-lime-400 text-white p-6 flex justify-between items-center shadow-md">
     <h1 class="text-xl font-bold">EventName 2025</h1>
     <button id="menu-toggle" class="text-2xl md:hidden">☰</button>
     <ul id="nav-menu" class="hidden md:flex space-x-6">
-      <li><a href="#about" class="hover:text-yellow-300">Tentang</a></li>
-      <li><a href="#schedule" class="hover:text-yellow-300">Jadwal</a></li>
-      <li><a href="#sponsor" class="hover:text-yellow-300">Sponsor</a></li>
+      <li><a href="#about" class="bg-yellow-400 text-indigo-700 px-3 py-1 rounded-md"">Tentang</a></li>
+      <li><a href="#schedule" class="bg-yellow-400 text-indigo-700 px-3 py-1 rounded-md"">Jadwal</a></li>
+      <li><a href="#sponsor" class="bg-yellow-400 text-indigo-700 px-3 py-1 rounded-md"">Sponsor</a></li>
       <li><a href="#register" class="bg-yellow-400 text-indigo-700 px-3 py-1 rounded-md">Daftar</a></li>
     </ul>
   </header>
@@ -26,6 +26,7 @@
       <li><a href="#about">Tentang</a></li>
       <li><a href="#schedule">Jadwal</a></li>
       <li><a href="#sponsor">Sponsor</a></li>
+      <li><a href="#daftar">daftar</a></li>
 
     </ul>
   </div>
@@ -147,4 +148,3 @@
   <script src="scripts.js"></script>
 </body>
 </html>
-
