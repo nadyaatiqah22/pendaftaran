@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>EventName 2025</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+    
   <!-- HEADER -->
-  <header class="site-header">
-  <div class="container header-inner">
-    <a href="#" class="logo">EventName 2025</a>
-
-    <!-- Tombol Hamburger -->
-    <button class="menu-toggle" id="menu-toggle">☰</button>
+  <header class="bg-gradient-to-r from-green-900 via-green-500 to-lime-700 text-white p-6 flex justify-between items-center shadow-md">
+    <h1 class="text-xl font-bold">EventName 2025</h1>
+    <button id="menu-toggle" class="text-2xl md:hidden">☰</button>
+    <ul id="nav-menu" class="hidden md:flex space-x-6">
+      <li><a href="#about" class="hover:text-yellow-300">Tentang</a></li>
+      <li><a href="#schedule" class="hover:text-yellow-300">Jadwal</a></li>
+      <li><a href="#sponsor" class="hover:text-yellow-300">Sponsor</a></li>
+      <li><a href="#register" class="bg-yellow-400 text-indigo-700 px-3 py-1 rounded-md">Daftar</a></li>
+    </ul>
+  </header>
 
     <!-- Navigasi -->
     <ul class="nav" id="nav-menu">
       <li><a href="#about">Tentang</a></li>
       <li><a href="#schedule">Jadwal</a></li>
       <li><a href="#sponsor">Sponsor</a></li>
-      <li><a href="#register" class="cta">Daftar</a></li>
+
     </ul>
   </div>
 </header>
 
 
   <!-- HERO -->
-<section class="hero" id="home">
-  <div class="container">
-    <h1>Selamat Datang di <span>EventName 2025</span></h1>
-    <p>Konferensi Inovasi Digital Terbesar Tahun Ini!</p>
-    <a href="#register" class="btn-primary">Daftar Sekarang</a>
-  </div>
-</section>
+<section class="hero h-screen flex flex-col justify-center items-center text-center bg-cover bg-center" style="background-image: url('gambar8.jpg');">
+    <div class="bg-black bg-opacity-50 p-8 rounded-xl text-white transition-all duration-700 transform scale-90 opacity-0" id="hero-content">
+      <h1 class="text-4xl font-bold mb-2">Selamat Datang di <span class="text-yellow-400">EventName 2025</span></h1>
+      <p class="mb-6">Konferensi Inovasi Digital Terbesar Tahun Ini!</p>
+      <a href="#register" class="bg-yellow-400 text-indigo-800 px-5 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">Daftar Sekarang</a>
+    </div>
+  </section>
 
-  <section id="gallery" class="section alt-bg">
+  <section id="gallery" class="section alt-bg" >
   <div class="container">
     <h2>Galeri Event</h2>
     <div class="slider">
@@ -44,10 +50,9 @@
         <img src="gambar2.jpg" alt="Foto 2">
         <img src="gambar3.jpg" alt="Foto 3">
         <img src="gambar4.jpg" alt="Foto 4">
-        <img src="gambar5.jpg" alt="Foto 4">
-        <img src="gambar6.jpg" alt="Foto 4">
-        <img src="gambar7.jpg" alt="Foto 4">
-        <img src="gambar8.jpg" alt="Foto 4">
+        <img src="gambar5.jpg" alt="Foto 5">
+        <img src="gambar6.jpg" alt="Foto 6">
+        <img src="gambar7.jpg" alt="Foto 7">
       </div>
       <button class="prev">&#10094;</button>
       <button class="next">&#10095;</button>
@@ -85,12 +90,12 @@
   <section id="schedule" class="section alt-bg container">
     <h2>Jadwal Singkat</h2>
     <ul class="timeline">
-      <li><strong>08:00</strong> - Registrasi Peserta & Welcome Coffee</li>
-      <li><strong>09:00</strong> - Opening & Keynote Speaker</li>
-      <li><strong>11:00</strong> - Panel Diskusi & Workshop</li>
-      <li><strong>13:00</strong> - Lunch & Networking</li>
-      <li><strong>15:00</strong> - Sesi Inspiratif</li>
-      <li><strong>17:00</strong> - Penutupan</li>
+      <li class="py-12 bg-white text-center"><strong>08:00</strong> - Registrasi Peserta & Welcome Coffee</li>
+      <li class="py-12 bg-white text-center"><strong>09:00</strong> - Opening & Keynote Speaker</li>
+      <li class="py-12 bg-white text-center"><strong>11:00</strong> - Panel Diskusi & Workshop</li>
+      <li class="py-12 bg-white text-center"><strong>13:00</strong> - Lunch & Networking</li>
+      <li class="py-12 bg-white text-center"><strong>15:00</strong> - Sesi Inspiratif</li>
+      <li class="py-12 bg-white text-center"><strong>17:00</strong> - Penutupan</li>
     </ul>
   </section>
 
@@ -107,12 +112,13 @@
   <!-- PENDAFTARAN -->
   <section id="register" class="section alt-bg container">
     <h2>Pendaftaran Peserta</h2>
+    
     <p style="text-align:center;">Pilih kategori yang sesuai dan isi formulir pendaftaran melalui Google Form berikut:</p>
     <div class="register-buttons">
       <a href="https://forms.gle/link-form-umum" target="_blank" class="btn-primary">Pendaftaran Peserta Umum</a>
       <a href="https://forms.gle/link-form-vip" target="_blank" class="btn-secondary">Pendaftaran VIP</a>
       <a href="https://forms.gle/link-form-sponsor" target="_blank" class="btn-secondary">Pendaftaran Sponsor</a>
-      <a href="https://forms.gle/link-form-volunteer" target="_blank" class="btn-secondary">Pemesanan Ukuran Kaos</a>
+      <a href="https://forms.gle/link-form-ukurankaos" target="_blank" class="btn-secondary">Pemesanan Ukuran Kaos</a>
     </div>
   </section>
 
